@@ -11,7 +11,7 @@ const chefRoutes = require("./routes/chefRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 const reportRoutes = require("./routes/reportRoutes");
 const recipiesRoutes = require("./routes/recipieRoutes");
-
+const paymentRoutes = require("./routes/paypalconfig")
 // Server variables
 const port = process.env.PORT || 3000;
 const app = express();
@@ -34,6 +34,7 @@ app.use("/api/dishes", dishRoutes);
 app.use("/api/messages", contactRoutes);
 app.use("/api/reports", reportRoutes);
 app.use("/api/recipes", recipiesRoutes);
+app.use('/api', paymentRoutes);
 
 // Server connection
 app.listen(port, () => {
